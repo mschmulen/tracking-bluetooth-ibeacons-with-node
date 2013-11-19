@@ -45,10 +45,9 @@ the initial splash screen will give you an idea where the app name came from.  T
 
 #### Building the herald iPhone App
 
-
-![image](./screenshots/image1.png)
-![image](./screenshots/image2.png)
-![image](./screenshots/image3.png)
+<img src="./screenshots/image1.png" alt="tab Home" height="209" width="120">
+<img src="./screenshots/image2.png" alt="tab Home" height="209" width="120">
+<img src="./screenshots/image3.png" alt="tab Home" height="209" width="120">
 
 You can find the source code on [github](http://github.com/mschmulen/tracking-bluetooth-ibeacons-with-node) and experiment with iBeacons and BLE devices yourself.
 
