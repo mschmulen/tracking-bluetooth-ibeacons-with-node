@@ -1,32 +1,41 @@
 
 UNSTABLE - WORK IN PROGRESS
 
+Tracking mobile iBeacons and BlueTooth Low Energy engagements with Node.js
+--
 
-## Tracking iOS iBeacons and BlueTooth Low Energy engagements with Node.js
-
-### What: iBeacons are Apples convention for handling Bluetooth Low Energy devices
+###iBeacons are Apples convention for handling Bluetooth Low Energy engagements
 
 iBeacons are Bluetooth Low Energy(BLE) wireless sensors that support a specific [HID profile schema ](https://developer.bluetooth.org/TechnologyOverview/Pages/HID.aspx) instead of the traditional [GATT profile ](http://en.wikipedia.org/wiki/Bluetooth_profile#Attribute_Profile_.28ATT.29).  Additionally Apple iBeacons provide convention, libraries and integration into mobile location services.  iBeacons breaks down BLE into 3 core features: broadcast, monitoring and ranging.
 
-Bluetooth Low Energy Energy Beacons have come into the world around us.  Apple's integration of Bluetooth technology into branded iBeacons will inevitable proliferate the technology.  Large implementations of the technology such as [ MLB's installation into ball parks ](http://techcrunch.com/2013/09/29/mlbs-ibeacon-experiment-may-signal-a-whole-new-ball-game-for-location-tracking/), and [PayPal's Beacon ](https://www.paypal.com/us/webapps/mpp/beacon ) payment system are making facilities and locations smart. Startups like[estimote](http://estimote.com) , [Brick Trends](http://bricktrends.com), [Pebble](http://pebble.com) are making it easier for developers and businesses to integrate the technology into their customers daily lives.  All this is making your mobile device 'the new endpoint' and mobile application's more of a digital proxy for users interacting in real world.
+Bluetooth Low Energy Energy Beacons have come into the world around us.  Apple's integration of Bluetooth technology into branded iBeacons will inevitable proliferate the technology.  Large implementations of the technology such as [ MLB's installation into ball parks ](http://techcrunch.com/2013/09/29/mlbs-ibeacon-experiment-may-signal-a-whole-new-ball-game-for-location-tracking/), and [PayPal's Beacon ](https://www.paypal.com/us/webapps/mpp/beacon ) payment system are making facilities and locations smart. Startups like [estimote](http://estimote.com) , [Brick Trends](http://bricktrends.com), [Pebble](http://pebble.com) are making it easier for developers and businesses to integrate the technology into their customers daily lives.  All this is making your mobile device 'the new endpoint' and mobile application's more of a digital proxy for users interacting in real world.
 
-###GPS gives mobile devices 'vicinity' awareness BLE iBeacons gives mobile apps access to 'proximity'
+###GPS gives devices 'vicinity' awareness, BLE iBeacons gives devices 'proximity' awareness
 
-Leveraging Bluetooth your mobile device can tell how far away your user is from a bluetooth beacon.  GPS gave mobile devices the power of vicinity; your device knows where it is with a neighborhood block accuracy ( provided you had line of sight to a GPS satellite ).  This singular technology gave way to location targeted push notifications with geo fencing, time and location relevant mobile Ad's, geo caching games and of course everyone's favorite "Dude Where's my Car" mobile apps.
+Leveraging Bluetooth your mobile device can tell how far away your user is from a bluetooth 'beacon'.  GPS gave mobile devices the power of vicinity; your device knows where it is with a neighborhood block accuracy (provided you had line of sight to a GPS satellite).  This singular technology gave way to location targeted push notifications with geo fencing, time and location relevant mobile Ad's, geo caching games and of course everyone's favorite "Dude Where's my Car" mobile apps.
 
 BlueTooth LE and iBeacons will extend these use cases by illuminate the regions of our lives in the shadow of GPS line of Sight.  In-store retail "brick" analytics (currently brick and mortar retailers have no idea where you are in their store or how your spending your time ) is likely to see the largest shift.
 
-Retail kiosks, end-caps, and payment terminals are blind, dumb and mute to your mobile device.  Effectively **the urinal in the men's bathroom is smarter than your average retail kiosk**; at least the urinal knew when you were in front of it and when you stepped away. iBeacons will make facilities and displays aware of the mobile device ( and user ) in front of them.
+Retail kiosks, end-caps, and payment terminals are blind, dumb and mute to your mobile device.  Effectively **the urinal in the men's bathroom is smarter than your average retail kiosk; at least the urinal knew to flush when you stepped away**. iBeacons will make facilities, displays and the devices that power them aware of the mobile device ( and user ) in front of them.
 
-### Why: Stats and market validation : 
+### Location Aware devices are going to change Retail
 
 With [70 percent of smartphone shoppers use a store locator to plan their shopping trip](http://www.nielsen.com/us/en/newswire/2013/a-mobile-shoppers-journey--from-the-couch-to-the-store--and-back.html).  Mobile apps will play an integral roll in store shopping experience.
 
-Retail and real world vendors know the power of Mobile applications, justified by stats such as [Forty-six percent of shoppers say they are less likely to comparison shop when using a mobile app](http://www.comscore.com/Insights/Presentations_and_Whitepapers/2013/Choices_Channels_and_Convenience_Enhancing_the_Online_Shopping_Experience)
+Retail and real world 'brick and mortar' vendors know the power of Mobile applications, justified by stats such as [Forty-six percent of shoppers say they are less likely to comparison shop when using a mobile app](http://www.comscore.com/Insights/Presentations_and_Whitepapers/2013/Choices_Channels_and_Convenience_Enhancing_the_Online_Shopping_Experience)
 
 Coupling purchases and the fact that [25 million Americans use Coupon apps each month](https://www.npd.com/wps/portal/npd/us/news/press-releases/pr_120523/) and the [prediction that the number of U.S. adult smartphone users who also use mobile coupons will jump to 40.8 million at the end of 2013](http://www.emarketer.com/Article/Digital-Coupons-Mobile-Give-Cheapskates-Staying-Power/1009847#Jy3uKPRgRE7lZiuJ.99) gives ecosystem opportunity around BLE and iBeacon technology.
 
 Bluetooth enabled accessories are projected to experience massive growth—220 million units this year to nearly 1 billion per year by 2016 (ABI Research)
+
+###Why does Node Matter
+Bluetooth engagements can create analytic 'engagement' 100 packages every millisecond, and bursting this information to another mobile devices; possibly in the hands of retail associate. This information needs to be in the hands ( or devices ) of people that can engage with the potential customer in realtime.  Pairing in store realtime analytics with shopper loyalty programs gives retail floor associates opportunity to engage at the moment of interest.  Node apps can collect this information and trigger Push Notifications, email alerts and realtime at the time of opportunity.
+
+Additionally dashboards can give daily and realtime analytics to floor managers on which associates are effectively engaging with their customers. 
+
+Node.js realtime low latency response and request architecture makes it a perfect collector, and aggregator for this information.  Node can be deployed on the cloud or even in the facility on a device that is collecting this information. 
+
+Combined with the variety of NPM modules available for displaying this data, delivering it cloud or storing it in databases or 3rd party analytics engines makes Node.js the perfect technology for the middle tier. Weather you are running the bluetooth sniffing Node application on site in a Raspberry Pi, a Laptop or as a cloud aggregator Node fits the need perfectly.
 
 ### How intro :
 
