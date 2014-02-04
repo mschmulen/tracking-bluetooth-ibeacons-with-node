@@ -47,17 +47,16 @@ Since we want to share and report these interactions platform then your going to
 
 If you want to test it out the mobile application is preconfigured to use a staged instance of the server; of course you can also stand up your own supporting server by deploying the LoopBack Node.js Server on your Cloud Provider of choice or on your own machine.
 
-### How mobile client : Herald iPhone Application
+### How mobile client : iBeacon iPhone Application
 
-The Herald iPhone Application is a simple native iOS application that allows configuration as a Central, a Peripheral or both. Once you download the github repo you can run the application from XCode in the simulator ( you will not be able to activate the BlueTooth features unless you have a secondary blueTooth device attached to your dev machine), or install on an iOS device connected to your host machine.
+The [iBeacon iPhone Application](/client-iphone) is a simple native iOS application that allows configuration as a Central, a Peripheral or both. Once you download the github repo you can run the application from XCode in the simulator ( you will not be able to activate the BlueTooth features unless you have a secondary blueTooth device attached to your dev machine), or install on an iOS device connected to your host machine.
 
 The initial splash screen will give you an idea where the app name came from.  The Second tab is where the magic happens.  you can enable your iPhone to to 'Advertise', making your phone look like a Peripheral to other Central devices in the vicinity.   Additionally you can enable 'BLE ranging' and your device will look for other iBeacons and report back the 'range' or proximity of the BLE Peripheral. The TextField below each of the switches shows the identification the device is advertising and ranging as.
 
-#### King Harald Bluetooth the last viking
+#### iPhone iBeacon Demo App
 
 <img src="./screenshots/image1.png" alt="tab Home" height="209">
 <img src="./screenshots/image2.png" alt="tab Home" height="209">
-<img src="./screenshots/image3.png" alt="tab Home" height="209">
 
 You can find the source code on [github](http://github.com/mschmulen/tracking-bluetooth-ibeacons-with-node) and experiment with iBeacons and BLE devices yourself.
 
