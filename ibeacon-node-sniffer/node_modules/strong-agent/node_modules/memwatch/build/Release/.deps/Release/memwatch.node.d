@@ -1,0 +1,1 @@
+cmd_Release/memwatch.node := ./gyp-mac-tool flock ./Release/linker.lock c++ -bundle -Wl,-search_paths_first -mmacosx-version-min=10.5 -arch x86_64 -L./Release  -o Release/memwatch.node Release/obj.target/memwatch/src/heapdiff.o Release/obj.target/memwatch/src/init.o Release/obj.target/memwatch/src/memwatch.o Release/obj.target/memwatch/src/util.o -undefined dynamic_lookup

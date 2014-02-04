@@ -1,0 +1,1 @@
+module.exports = require('./baseTiers')('loopback_tiers');
