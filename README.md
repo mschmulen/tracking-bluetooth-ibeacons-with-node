@@ -1,4 +1,4 @@
-Tracking mobile iBeacons and BlueTooth Low Energy engagements with Node.js
+Tracking mobile BlueTooth LE iBeacon engagements with Node.js
 --
 
 
