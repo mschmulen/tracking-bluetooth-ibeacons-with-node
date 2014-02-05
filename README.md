@@ -42,8 +42,10 @@ Bleacon.startScanning();```
 
 Start the Estimote App in 'Beacons' mode.
 
+<img src="screenshots/ble-apps.png" alt="tab 1" height="209" width="120">
+
 <img src="screenshots/estimote-ibeacon.png" alt="tab 1" height="209" width="120">
-and then simply start the node application on your host machine with 
+Run the node application on your host machine with 
 ```slc run app.js```
 
 In addition to entering the engagement in the in memory data store the code above will shows the BLE [ Received signal strength indication (RSSI) ](http://en.wikipedia.org/wiki/Received_signal_strength_indication) to the console log as your Node application receives Bleacon discover events.  The RSSI value is used to determine the proximity (distance) of a BLE peripheral.
@@ -63,10 +65,10 @@ Filter engagements based on a GUID:
 Filter engagements based on GUID and time:
 [http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16)
 
-<img src="screenshots/api-ibeacons.png" alt="tab 1" width="420">
-
-Filter engagements based on 2 GUID interactions:
+Filter engagements based on GUID interactions:
 [http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16)
 
-If you want to build your own iOS app you can start with this sample:
+<img src="screenshots/api-ibeacons.png" alt="tab 1" width="420">
+
+If you want to build your own iOS app you can start with this sample.
 ###Identify anonymous beacon signatures and track peopleMatch the user to the anonymous signature and start tracking people within 100 feet of our machine.If you want to go the extra mile, simply use the built in LoopBack ```user model``` object by adding an index reference to the ```beacon model```. When you convert all the anonymous beacon signatures to known users the engagements analytics show real world user behavior.The conversion from an anonymous unknown user BLE iBeacon signature to known user behavior is the reason that retailers want you to open their customer loyalty app in the store and login.  Binding your user profiler to the device and allowing them to track your in store loitering and behavior ( and possibly target engagements at you ) in the same way they track your shopping behaviors online.Whats Next ?
