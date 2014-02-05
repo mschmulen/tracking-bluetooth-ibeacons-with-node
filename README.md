@@ -100,21 +100,18 @@ Using the LoopBack API you can get all the beacon signatures in the system from 
 <img src="screenshots/api-ibeacons.png" alt="tab 1" width="420">
 
 We can also filter engagements based on a GUID using the built in
-[filter functionality](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15) with the following url request ```http://localhost:3000/api/engagements?filter[where][id]=1``` .  
+[filter functionality] (http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15) with the following url request ```http://localhost:3000/api/engagements?filter[where][id]=1``` .  
 
-We can also do complex filtering against engagement [time](http://localhost:3000/api/engagements?filter[where][id]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][time][gt]=87209302c7f24d56b1d114eadd0ce41f16), [proximity](ttp://localhost:3000/api/engagements?filter[where][proximity]=near) or any mix of the available parameters.
+We can also do complex filtering against engagement [time] (http://localhost:3000/api/engagements?filter[where][id]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][time][gt]=87209302c7f24d56b1d114eadd0ce41f16), [proximity] (http://localhost:3000/api/engagements?filter[where][proximity]=near ) or any mix of the available parameters.
 
-``` http://localhost:3000/api/engagements?filter[where][id]=2&filter[where][proximity]=near```.
+``` http://localhost:3000/api/engagements?filter[where][id]=2&filter[where][proximity]=near ```
 
 <img src="screenshots/loopback-filter-near.png" alt="tab 1" width="420">
-
 
 ###Identify anonymous mobile beacon signatures and track people
 
 Match the user to the anonymous signature and start tracking people within 100 feet of our machine.
 
-
 If you want to go the extra mile, simply use the built in LoopBack ```user model``` object by adding an index reference to the ```beacon model```. When you convert all the anonymous beacon signatures to known users the engagements analytics show real world user behavior.
-
 
 The conversion from an anonymous unknown user BLE iBeacon signature to known user behavior is the reason that retailers want you to open their customer loyalty app in the store and login.  Binding your user profiler to the device and allowing them to track your in store loitering and behavior (and possibly target engagements at you) in the same way they track your shopping behaviors online.
