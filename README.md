@@ -49,26 +49,18 @@ Start the Estimote App in 'Beacons' mode.
 ```slc run app.js```
 
 In addition to entering the engagement in the in memory data store the code above will shows the BLE [ Received signal strength indication (RSSI) ](http://en.wikipedia.org/wiki/Received_signal_strength_indication) to the console log as your Node application receives Bleacon discover events.  The RSSI value is used to determine the proximity (distance) of a BLE peripheral.
-<img src="screenshots/console-run.png" alt="tab 1" width="420">###Run your node app anywhere and persist the data to MongoDBYou can install this on a Raspberry-Pi (just follow these instructions) to create a simple “sniffer” device that when plugged into the wall will track all the Bluetooth engagements that occur in your home, office or store.
-If you want to persist your analytics data you can simply change the LoopBack model binding in ```datasources.json``` to point to a MongoDB instance, you can find more information on binding your Node.js API tier LoopBack supported data stores [here](http://strongloop.com).
-It's also interesting to turn on StrongOps and watch the memory and CPU profile of your machine as your machine 'sniffer' captures.
-Lets look at some of the beacon signatures and engagements that we have captured using the LoopBack Explorer feature.[http://localhost:3000/explorer/](http://localhost:3000/explorer/)<img src="screenshots/loopback-explorer-beacon.png" alt="tab 1" width="420">###Search and filter API for engagement analysis
-Using the LoopBack API you can get all the beacon signatures in the system from
-[http://localhost:3000/api/engagements](http://localhost:3000/api/engagements)
+<img src="screenshots/console-run.png" alt="tab 1" width="420">###Run your node app anywhere and persist the data to MongoDBSince the app is using Node can run the collector anywhere that supports the Node.js runtime, such as on a Raspberry-Pi.  Allowing you to to create a simple “sniffer” device that when plugged into the wall will track all the Bluetooth engagements that occur in your home, office or store.
+If you want to persist your analytics data you can simply change the LoopBack model binding in ```datasources.json``` to point to supported data store such as MongoDB, MySQL, or Oracle. you can find more information on configuring your Node.js API to work with LoopBack supported data stores and connectors [in the StrongLoop documentation](http://docs.strongloop.com/display/DOC/Data+sources+and+connectors).
+Lets look at some of the beacon signatures and engagements that we have captured using the LoopBack Explorer feature on our local machine by opening [http://localhost:3000/explorer/](http://localhost:3000/explorer/) in our web browser.<img src="screenshots/loopback-explorer-beacon.png" alt="tab 1" width="420">###Search and filter API for engagement analysis
+Using the LoopBack API you can get all the beacon signatures in the system from JSON API endpoint at [http://localhost:3000/api/engagements](http://localhost:3000/api/engagements).
 
 <img src="screenshots/api-ibeacons.png" alt="tab 1" width="420">
-Filter engagements based on a GUID:
-[http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15)
+We can also filter engagements based on a GUID using the built in
+[filter functionality](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15) with ```http://localhost:3000/api/engagements?filter[where][id]=1``` 
 
-<img src="screenshots/api-ibeacons.png" alt="tab 1" width="420">
+or based on the engagement time ``` http://localhost:3000/api/engagements?filter[where][id]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][time][gt]=87209302c7f24d56b1d114eadd0ce41f16```.
 
-Filter engagements based on GUID and time:
-[http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16)
+or for only 'near' proximity engagements ``` http://localhost:3000/api/engagements?filter[where][proximity]=near ```
 
-Filter engagements based on GUID interactions:
-[http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16](http://localhost:3000/api/engagements?filter[where][cBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f15&filter[where][pBeaconGUID]=87209302c7f24d56b1d114eadd0ce41f16)
-
-<img src="screenshots/api-ibeacons.png" alt="tab 1" width="420">
-
-If you want to build your own iOS app you can start with this sample.
-###Identify anonymous mobile beacon signatures and track peopleMatch the user to the anonymous signature and start tracking people within 100 feet of our machine.If you want to go the extra mile, simply use the built in LoopBack ```user model``` object by adding an index reference to the ```beacon model```. When you convert all the anonymous beacon signatures to known users the engagements analytics show real world user behavior.The conversion from an anonymous unknown user BLE iBeacon signature to known user behavior is the reason that retailers want you to open their customer loyalty app in the store and login.  Binding your user profiler to the device and allowing them to track your in store loitering and behavior (and possibly target engagements at you) in the same way they track your shopping behaviors online.Whats Next ?
+<img src="screenshots/loopback-filter-near.png" alt="tab 1" width="420">
+###Identify anonymous mobile beacon signatures and track peopleMatch the user to the anonymous signature and start tracking people within 100 feet of our machine.If you want to go the extra mile, simply use the built in LoopBack ```user model``` object by adding an index reference to the ```beacon model```. When you convert all the anonymous beacon signatures to known users the engagements analytics show real world user behavior.The conversion from an anonymous unknown user BLE iBeacon signature to known user behavior is the reason that retailers want you to open their customer loyalty app in the store and login.  Binding your user profiler to the device and allowing them to track your in store loitering and behavior (and possibly target engagements at you) in the same way they track your shopping behaviors online.
