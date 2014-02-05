@@ -44,7 +44,8 @@ Bleacon.on('discover', function(bleacon) {
 
 Bleacon.startScanning();```
 Test the implementation by installing an app that uses iBeacons from the from the app store:  The estimates is a good example.###Resolutions – Turn You can install this on a Raspberry-Pi (just follow these instructions) to create a simple “sniffer” device that when plugged into the wall will track all the Bluetooth engagements that occur in your home, office or store.
-If you want to persist your analytics data you can simply change the LoopBack model binding in datasources.json to point to a MongoDB instance.###Resolutions – Prestige
+If you want to persist your analytics data you can simply change the LoopBack model binding in datasources.json to point to a MongoDB instance.
+It's also interesting to turn on StrongOps and watch the memory and CPU profile of your machine as your machine 'sniffer' captures.###Resolutions – Prestige
 Show the dashboard with search and filter.
 
 [image](screenshots/image1.png)
