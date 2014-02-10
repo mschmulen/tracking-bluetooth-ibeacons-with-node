@@ -1,22 +1,23 @@
 Tracking mobile BlueTooth LE iBeacon engagements with Node.js
 --
 
-
 ###iBeacons and Bluetooth Low Energy (BLE)
-Bluetooth Low Energy (BLE) ‘beacons’ have come into the world around us with Apple’s branded iBeacon witch gives branded convention and integration of the BLE devices.  iBeacon’s break down BLE into 3 core features: broadcast, monitoring and ranging.  
+Bluetooth Low Energy (BLE) beacons have come into the world around us with Apple’s branded iBeacon which gives branded convention and integration of the BLE devices. iBeacons break down BLE into 3 core features: broadcast, monitoring and ranging.
 
+<img src="screenshots/ble-mobile.png" alt="tab 1" width="320">
 
-iBeacon is primarily a location service similar in many ways to mobile GPS Geolocation. Unlike GPS Geolocation, which gives mobile apps 'vicinity' awareness (limited to outdoor scenarios that have line of sight to GPS satellites), BLE iBeacon gives mobile application’s 'proximity' awareness.
+iBeacon is similar in some ways to mobile GPS Geolocation  services. Unlike GPS Geolocation, which gives mobile apps vicinity awareness (limited to outdoor scenarios that have line of sight to GPS satellites), BLE iBeacon gives mobile application’s proximity awareness from other iBeacon devices.  The distance can be used to triangulate where the user is from a known fixed beacon location or identify if the user is within a predefined nominal “immediate”, “near” or “far” proximity to a device.
 
+<img src="screenshots/ble-ranging.png" alt="tab 1" width="420">
 
 ###Bluetooth proliferation
 The branding and assimilation of BLE into Apples iOS7 platform is causing a proliferation of Bluetooth ‘beacon-ing’ technology. Large implementations of the technology such as [ MLB's installation into ball parks ](http://techcrunch.com/2013/09/29/mlbs-ibeacon-experiment-may-signal-a-whole-new-ball-game-for-location-tracking/), and [PayPal's Beacon ](https://www.paypal.com/us/webapps/mpp/beacon ) payment system are making facilities and locations smart. Startups like [Estimote](http://), [Shelf Bucks](http://shelfbucks.com/), [Pebble](http://pebble.com) are making it easier for developers and businesses to integrate the technology into their customers’ daily lives and their mobile app’s.  The technology is poised to forever change kiosks, retail end-caps, payment terminals and the facilities around us. Historically these engagement touch points were blind, dumb and mute to your mobile device. Historically *the restrooms in the bathroom were the smartest machine in your average retail facility; at least the toilet knew to flush when a person stepped away*. iBeacons will make stores, and the devices inside them aware of the mobile devices (more importantly user) in the facility.  This gives analytics and insight into the previously dark world of “in store” behavior and engagement [changing everything in retail](http://www.forbes.com/sites/centurylink/2013/10/31/how-apples-ibeacon-will-change-everything-for-retail-analytics/) shopping experiences.
 
 ###You are your mobile ‘signature'
-When you open a BLE enabled mobile app your Blue Tooth ‘signature' tracks your location and behavior by your proximity to other BLE aware machines and devices. In a similar way to how a web cookie allows retailers to track your journey through a web site, your real world engagements are tacked as you interact with BLE aware devices.
+When you open a BLE enabled mobile app your Blue Tooth ‘signature' tracks your location and behavior by your proximity to other BLE aware machines and devices. In a similar way to how a web cookie allows retailers to track your journey through a web site, your real world engagements can be tracked as you interact with BLE aware devices.
 
 ###The Power of Node.js
-Using StrongLoops [LoopBack](http://strongloop.com/mobile-application-development/loopback/) and the open source [bleacon npm](https://npmjs.org/package/bleacon) package It’s very easy to track an iBeacon enabled mobile app using Node.js.  Will show you how to do this on your local machine and track the engagements from the machine interaction for later analysis and reporting.
+Using StrongLoops [LoopBack](http://strongloop.com/mobile-application-development/loopback/) and the open source [bleacon npm](https://npmjs.org/package/bleacon) package it’s very easy to track an iBeacon enabled mobile app using Node.js.  Will show you how to do this on your local machine and track the engagements from the machine interaction for later analysis and reporting.
 
 ###Tracking BLE engagements with 6 commands and 25 LOC 
 You can build the demo on your own and see it run on a mac book pro (requires Mavericks) with Node.js by simply cloning the repo ‘git clone https://github.com/mschmulen/tracking-bluetooth-ibeacons-with-node’ and running it with ‘slc run app.js’
@@ -37,8 +38,8 @@ The commands above installs the [strong-cli](http://https://npmjs.org/package/st
 
 **Code:**
 
-Add the 10 lines of code below to your app.'s file 
-after line 121 in app.js file, right after ``` app.get('/', loopback.status()); ```  to [upsert](http://strongloop.com) a beacon engagement and beacon signature into the default in memory data store.
+
+Create a folder /boot under the ibeacon-node-collector folder and a file init.js .  Add the 10 lines of code below to the newly created ~/ibeacon-node-collector/boot/init.js file.
 
 ```
 var ibeacon = app.models.ibeacon;
